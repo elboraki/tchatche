@@ -11,13 +11,14 @@
                 </div>
             </div>
             <div class="extra content">
+                <%= form_for(@message,html:{class:"ui reply form",role:"form"},url:message_path) do |f| %>
                     <div class="field">
                         <div class="ui fluid icon input">
-                            <input type="text" placeholder="type your message...">
-                            <i class="inverted circular blue keyboard icon"></i>
-                        </div>
+                            <%= f.text_field :body ,html:{placeholder:"type your message..."}%>
+                            <%= f.button '<i class="inverted circular blue keyboard icon"></i>'.html_safe %>                        </div>
                     </div>
             
+                <% end %>
             </div>
 
         </div>
