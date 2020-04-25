@@ -18,6 +18,12 @@
 //= require semantic-ui/dropdown
 //= require_tree .
 
+
+scrool_bottom=function(){
+  if($("#messages").length>0){
+    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+  }
+}
 $(document).on("turbolinks:load", function () {
   $('.ui.dropdown')
     .dropdown();
@@ -29,5 +35,6 @@ $(document).on("turbolinks:load", function () {
         .transition('fade')
         ;
     });
-
+    scrool_bottom();
 });
+
